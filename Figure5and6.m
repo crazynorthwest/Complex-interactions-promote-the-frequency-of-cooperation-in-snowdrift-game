@@ -1,10 +1,10 @@
-load('C:\Users\jxhan\Desktop\ÂÛÎÄ\ÊµÁ¦²»¶Ô³Æ\ÊµÁ¦²»¶Ô³Æ3\×÷Í¼£¨final2)\³ÌĞò\figure11.mat')
+load('C:\Users\jxhan\Desktop\è®ºæ–‡\å®åŠ›ä¸å¯¹ç§°\å®åŠ›ä¸å¯¹ç§°3\ä½œå›¾ï¼ˆfinal2)\ç¨‹åº\figure11.mat')
 figure(1)
 plot(cc,XX,'r')
 hold on
 plot(cc,YY(:,2),'k')
 
-load('C:\Users\jxhan\Desktop\ÂÛÎÄ\ÊµÁ¦²»¶Ô³Æ\ÊµÁ¦²»¶Ô³Æ3\×÷Í¼£¨final2)\³ÌĞò\figure21.mat')
+load('C:\Users\jxhan\Desktop\è®ºæ–‡\å®åŠ›ä¸å¯¹ç§°\å®åŠ›ä¸å¯¹ç§°3\ä½œå›¾ï¼ˆfinal2)\ç¨‹åº\figure21.mat')
 figure(2)
 subplot(1,2,1)
 plot(kkk,XX1(1,:),'rpentagram')
