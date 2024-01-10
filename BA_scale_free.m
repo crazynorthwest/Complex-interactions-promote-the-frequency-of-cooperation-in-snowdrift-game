@@ -3,12 +3,12 @@ clc
 
 s=50;
 sss=3;
-N=100;%×îÖÕ½ÚµãÊı
-k=0.1;%Ñ¡ÔñÇ¿¶È
-T=1000;%´úÊı
-TT=50;%Í³¼Æ´úÊı
-TTTT=5;%Ò»ÕÅÍ¼ÖØ¸´´ÎÊı
-TTTTT=5;%Í¼Êı
+N=100;%æœ€ç»ˆèŠ‚ç‚¹æ•°
+k=0.1;%é€‰æ‹©å¼ºåº¦
+T=1000;%ä»£æ•°
+TT=50;%ç»Ÿè®¡ä»£æ•°
+TTTT=5;%ä¸€å¼ å›¾é‡å¤æ¬¡æ•°
+TTTTT=5;%å›¾æ•°
 c=1;
 kkk=linspace(0.02,1,s);
 % cc=linspace(0.02,1,s);
@@ -27,9 +27,9 @@ YY=zeros(sss,s);
 ZZ=zeros(sss,s);
 for ttttt=1:TTTTT
 
-m0=4;%³õÊ¼½ÚµãÊı
-m=2;%Ã¿´ÎÒıÈëĞÂ½ÚµãÊ±Éú³ÉµÄ±ßÊı
-%mÓ¦²»´óÓÚm0
+m0=4;%åˆå§‹èŠ‚ç‚¹æ•°
+m=2;%æ¯æ¬¡å¼•å…¥æ–°èŠ‚ç‚¹æ—¶ç”Ÿæˆçš„è¾¹æ•°
+%måº”ä¸å¤§äºm0
 x=100*rand(1,m0);
 y=100*rand(1,m0);
 A=ones(m0);
@@ -38,7 +38,7 @@ for k=m0+1:N
     x(k)=100*rand;
     y(k)=100*rand;
     p=(sum(A)+1)/sum(sum(A)+1);
-    pp=cumsum(p);%ÀÛ¼Ó
+    pp=cumsum(p);%ç´¯åŠ 
     A(k,k)=0;
     ind=[];
     while length(ind)<m
@@ -49,7 +49,7 @@ for k=m0+1:N
     A(k,ind)=1;
     A(ind,k)=1;
 end
-k=0.1;%Ñ¡ÔñÇ¿¶È
+k=0.1;%é€‰æ‹©å¼ºåº¦
 for tttt=1:TTTT
 
 for ss=1:s
@@ -57,16 +57,16 @@ for ssss=1:sss
 b=bb(ssss);
 kk=kkk(ss);
 
-C=ones(1,N);%ÊµÁ¦¼¯£¬0µ½1¡£
+C=ones(1,N);%å®åŠ›é›†ï¼Œ0åˆ°1ã€‚
 AA=sum(A);
 [AAA,AAAA]=sort(AA);
 CC=zeros(1,N);
 CC(AAAA((fix((5*N)/10)+1):N))=1;
 C=CC*(1/kk-1)+C;
 
-D=zeros(1,N);%ÊÕÒæ¡£
+D=zeros(1,N);%æ”¶ç›Šã€‚
 
-B=ones(1,N);%%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+B=ones(1,N);%%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 BB=rand(1,N)-1/2;
 BB=sign(sign(BB)+1);
 B=B-BB;
@@ -103,9 +103,9 @@ for ssss=1:sss
 b=bb(ssss);
 kk=kkk(ss);
 b=b/kk;
-D=zeros(1,N);%ÊÕÒæ¡£
+D=zeros(1,N);%æ”¶ç›Šã€‚
 
-B=ones(1,N);%%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+B=ones(1,N);%%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 BB=rand(1,N)-1/2;
 BB=sign(sign(BB)+1);
 B=B-BB;
@@ -136,9 +136,9 @@ for ss=1:s
 for ssss=1:sss
 b=bb(ssss);
 kk=kkk(ss);
-D=zeros(1,N);%ÊÕÒæ¡£
+D=zeros(1,N);%æ”¶ç›Šã€‚
 
-B=ones(1,N);%%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+B=ones(1,N);%%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 BB=rand(1,N)-1/2;
 BB=sign(sign(BB)+1);
 B=B-BB;
@@ -168,7 +168,7 @@ tttt
 end
 ttttt
 end
-XXX=XX/(TTTT*TTTTT);%ºák×İc
+XXX=XX/(TTTT*TTTTT);%æ¨ªkçºµc
 XXX1=XX1/(TTTT*TTTTT);
 XXX2=XX2/(TTTT*TTTTT);
 YYY=YY/(TTTT*TTTTT);
