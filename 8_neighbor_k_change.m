@@ -9,16 +9,16 @@ s=3;
 cc=[0.2,0.5,0.8];
 bb=(c./cc+c)/2;
 
-XX=zeros(s,ss);%ºák×İb
+XX=zeros(s,ss);%æ¨ªkçºµb
 XX1=XX;
 XX2=XX;
 
-k=0.1;%Ñ¡ÔñÇ¿¶È
+k=0.1;%é€‰æ‹©å¼ºåº¦
 N=20;
 T=N*N;
-TT=10;%ÖØ¸´
-TTTT=500;%´úÊı
-TTT=20;%Í³¼Æ´úÊı
+TT=10;%é‡å¤
+TTTT=500;%ä»£æ•°
+TTT=20;%ç»Ÿè®¡ä»£æ•°
 
 for sss=1:s
 b=bb(sss);
@@ -29,18 +29,18 @@ X1=X;%weak
 X2=X;%strong
 
 for tt=1:TT
-A=ones(N,N);%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+A=ones(N,N);%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 AAA=rand(N,N)-1/2;
 AAA=sign(sign(AAA)+1);
 A=A-AAA;
 AA=ones(N+2,N+2);
 
-C=ones(N,N);%ÊµÁ¦¼¯£¬0ÎªÈõ1ÎªÇ¿¡£
+C=ones(N,N);%å®åŠ›é›†ï¼Œ0ä¸ºå¼±1ä¸ºå¼ºã€‚
 CCC=rand(N,N)-1/2;
 CCC=sign(sign(CCC)+1);
 C=(1/kk)*C-((1/kk)-1)*CCC;
 
-B=zeros(N,N);%ÊÕÒæÕó¡£
+B=zeros(N,N);%æ”¶ç›Šé˜µã€‚
 BB=zeros(N+2,N+2);
 for tttt=1:TTTT
 for t=1:T 
@@ -92,56 +92,56 @@ BB(N+2,N+2)=B(1,1);
     p=fix(rand*8)+1;
     if p==1
         d=BB(ii,jj+1)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj+1);
         end
     elseif p==2
         d=BB(ii+2,jj+1)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj+1);
         end
     elseif p==3
         d=BB(ii+1,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+1,jj);
         end
     elseif p==4
         d=BB(ii+1,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+1,jj+2);
         end
         elseif p==5
         d=BB(ii+2,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj+2);
         end
         elseif p==6
         d=BB(ii,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj+2);
         end
         elseif p==7
         d=BB(ii+2,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj);
         end
     else
         d=BB(ii,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj);
@@ -175,18 +175,18 @@ kk=1;
 Y=zeros(TT,TTT);
 
 for tt=1:TT
-A=ones(N,N);%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+A=ones(N,N);%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 AAA=rand(N,N)-1/2;
 AAA=sign(sign(AAA)+1);
 A=A-AAA;
 AA=ones(N+2,N+2);
 
-C=ones(N,N);%ÊµÁ¦¼¯£¬0ÎªÈõ1ÎªÇ¿¡£
+C=ones(N,N);%å®åŠ›é›†ï¼Œ0ä¸ºå¼±1ä¸ºå¼ºã€‚
 CCC=rand(N,N)-1/2;
 CCC=sign(sign(CCC)+1);
 C=(1/kk)*C-((1/kk)-1)*CCC;
 
-B=zeros(N,N);%ÊÕÒæÕó¡£
+B=zeros(N,N);%æ”¶ç›Šé˜µã€‚
 BB=zeros(N+2,N+2);
 for tttt=1:TTTT
 for t=1:T
@@ -238,56 +238,56 @@ BB(N+2,N+2)=B(1,1);
     p=fix(rand*8)+1;
     if p==1
         d=BB(ii,jj+1)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj+1);
         end
     elseif p==2
         d=BB(ii+2,jj+1)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj+1);
         end
     elseif p==3
         d=BB(ii+1,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+1,jj);
         end
     elseif p==4
         d=BB(ii+1,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+1,jj+2);
         end
         elseif p==5
         d=BB(ii+2,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj+2);
         end
         elseif p==6
         d=BB(ii,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj+2);
         end
         elseif p==7
         d=BB(ii+2,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj);
         end
     else
         d=BB(ii,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj);
@@ -334,16 +334,16 @@ s=3;
 cc=[0.2,0.5,0.8];
 bb=(c./cc+c)/2;
 
-XX=zeros(s,ss);%ºák×İb
+XX=zeros(s,ss);%æ¨ªkçºµb
 XX1=XX;
 XX2=XX;
 
-k=0.1;%Ñ¡ÔñÇ¿¶È
+k=0.1;%é€‰æ‹©å¼ºåº¦
 N=20;
 T=N*N;
-TT=4;%ÖØ¸´
-TTTT=400;%´úÊı
-TTT=40;%Í³¼Æ´úÊı
+TT=4;%é‡å¤
+TTTT=400;%ä»£æ•°
+TTT=40;%ç»Ÿè®¡ä»£æ•°
 
 for sss=1:s
 b=bb(sss);
@@ -351,13 +351,13 @@ for ssss=1:ss
 kk=kkk(ssss);
 X=zeros(TT,TTT);
 for tt=1:TT
-A=ones(N,N);%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+A=ones(N,N);%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 AAA=rand(N,N)-1/2;
 AAA=sign(sign(AAA)+1);
 A=A-AAA;
 AA=ones(N+2,N+2);
 
-B=zeros(N,N);%ÊÕÒæÕó¡£
+B=zeros(N,N);%æ”¶ç›Šé˜µã€‚
 BB=zeros(N+2,N+2);
 for tttt=1:TTTT
 for t=1:T 
@@ -409,56 +409,56 @@ BB(N+2,N+2)=B(1,1);
     p=fix(rand*8)+1;
     if p==1
         d=BB(ii,jj+1)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj+1);
         end
     elseif p==2
         d=BB(ii+2,jj+1)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj+1);
         end
     elseif p==3
         d=BB(ii+1,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+1,jj);
         end
     elseif p==4
         d=BB(ii+1,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+1,jj+2);
         end
         elseif p==5
         d=BB(ii+2,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj+2);
         end
         elseif p==6
         d=BB(ii,jj+2)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj+2);
         end
         elseif p==7
         d=BB(ii+2,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii+2,jj);
         end
     else
         d=BB(ii,jj)-B(ii,jj);
-        dd=sign(sign(d)+1);%ÀíĞÔ
+        dd=sign(sign(d)+1);%ç†æ€§
         pp=dd/(1+exp((-1)*d/k));
         if rand<pp
            A(ii,jj)=AA (ii,jj);
