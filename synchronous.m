@@ -9,18 +9,18 @@ s=3;
 cc=[0.2,0.5,0.8];
 bb=(c./cc+c)/2;
 
-XX=zeros(s,ss);%ºák×İb
+XX=zeros(s,ss);%æ¨ªkçºµb
 XX1=XX;
 XX2=XX;
 YY=XX;
 ZZ=XX;
 
-k=0.1;%Ñ¡ÔñÇ¿¶È
+k=0.1;%é€‰æ‹©å¼ºåº¦
 N=20;
 T=N*N;
-TT=5;%ÖØ¸´
-TTTT=500;%´úÊı
-TTT=50;%Í³¼Æ´úÊı
+TT=5;%é‡å¤
+TTTT=500;%ä»£æ•°
+TTT=50;%ç»Ÿè®¡ä»£æ•°
 
 for sss=1:s
 b=bb(sss);
@@ -31,18 +31,18 @@ X1=X;%weak
 X2=X;%strong
 
 for tt=1:TT
-A=ones(N,N);%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+A=ones(N,N);%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 AAA=rand(N,N)-1/2;
 AAA=sign(sign(AAA)+1);
 A=A-AAA;
 AA=ones(N+2,N+2);
 
-C=ones(N,N);%ÊµÁ¦¼¯£¬0ÎªÈõ1ÎªÇ¿¡£
+C=ones(N,N);%å®åŠ›é›†ï¼Œ0ä¸ºå¼±1ä¸ºå¼ºã€‚
 CCC=rand(N,N)-1/2;
 CCC=sign(sign(CCC)+1);
 C=(1/kk)*C-((1/kk)-1)*CCC;
 
-B=zeros(N,N);%ÊÕÒæÕó¡£
+B=zeros(N,N);%æ”¶ç›Šé˜µã€‚
 BB=zeros(N+2,N+2);
 for tttt=1:TTTT
      
@@ -71,7 +71,7 @@ BB(2:(N+1),N+2)=B(:,1);
 
 p=fix(rand(N,N)*4)+1;
 d=(p==1).*BB(1:N,2:(N+1))+(p==2).*BB(3:(N+2),2:(N+1))+(p==3).*BB(2:(N+1),1:N)+(p==4).*BB(2:(N+1),3:(N+2))-B;
-dd=sign(sign(d)+1);%ÀíĞÔ
+dd=sign(sign(d)+1);%ç†æ€§
 pp=dd./(1+exp((-1)*d/k));
 pppp=rand(N,N);
 AAAA=(p==1).*AA(1:N,2:(N+1))+(p==2).*AA(3:(N+2),2:(N+1))+(p==3).*AA(2:(N+1),1:N)+(p==4).*AA(2:(N+1),3:(N+2));
@@ -102,18 +102,18 @@ kk=1;
 Y=zeros(TT,TTT);
 
 for tt=1:TT
-A=ones(N,N);%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+A=ones(N,N);%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 AAA=rand(N,N)-1/2;
 AAA=sign(sign(AAA)+1);
 A=A-AAA;
 AA=ones(N+2,N+2);
 
-C=ones(N,N);%ÊµÁ¦¼¯£¬0ÎªÈõ1ÎªÇ¿¡£
+C=ones(N,N);%å®åŠ›é›†ï¼Œ0ä¸ºå¼±1ä¸ºå¼ºã€‚
 CCC=rand(N,N)-1/2;
 CCC=sign(sign(CCC)+1);
 C=(1/kk)*C-((1/kk)-1)*CCC;
 
-B=zeros(N,N);%ÊÕÒæÕó¡£
+B=zeros(N,N);%æ”¶ç›Šé˜µã€‚
 BB=zeros(N+2,N+2);
 for tttt=1:TTTT
 
@@ -142,7 +142,7 @@ BB(2:(N+1),N+2)=B(:,1);
 
 p=fix(rand(N,N)*4)+1;
 d=(p==1).*BB(1:N,2:(N+1))+(p==2).*BB(3:(N+2),2:(N+1))+(p==3).*BB(2:(N+1),1:N)+(p==4).*BB(2:(N+1),3:(N+2))-B;
-dd=sign(sign(d)+1);%ÀíĞÔ
+dd=sign(sign(d)+1);%ç†æ€§
 pp=dd./(1+exp((-1)*d/k));
 pppp=rand(N,N);
 AAAA=(p==1).*AA(1:N,2:(N+1))+(p==2).*AA(3:(N+2),2:(N+1))+(p==3).*AA(2:(N+1),1:N)+(p==4).*AA(2:(N+1),3:(N+2));
@@ -168,18 +168,18 @@ kk=1;
 Z=zeros(TT,TTT);
 
 for tt=1:TT
-A=ones(N,N);%²ßÂÔÕó¡£1ÎªºÏ×÷£¬0Îª±³ÅÑ¡£
+A=ones(N,N);%ç­–ç•¥é˜µã€‚1ä¸ºåˆä½œï¼Œ0ä¸ºèƒŒå›ã€‚
 AAA=rand(N,N)-1/2;
 AAA=sign(sign(AAA)+1);
 A=A-AAA;
 AA=ones(N+2,N+2);
 
-C=ones(N,N);%ÊµÁ¦¼¯£¬0ÎªÈõ1ÎªÇ¿¡£
+C=ones(N,N);%å®åŠ›é›†ï¼Œ0ä¸ºå¼±1ä¸ºå¼ºã€‚
 CCC=rand(N,N)-1/2;
 CCC=sign(sign(CCC)+1);
 C=(1/kk)*C-((1/kk)-1)*CCC;
 
-B=zeros(N,N);%ÊÕÒæÕó¡£
+B=zeros(N,N);%æ”¶ç›Šé˜µã€‚
 BB=zeros(N+2,N+2);
 for tttt=1:TTTT
 
@@ -208,7 +208,7 @@ BB(2:(N+1),N+2)=B(:,1);
 
 p=fix(rand(N,N)*4)+1;
 d=(p==1).*BB(1:N,2:(N+1))+(p==2).*BB(3:(N+2),2:(N+1))+(p==3).*BB(2:(N+1),1:N)+(p==4).*BB(2:(N+1),3:(N+2))-B;
-dd=sign(sign(d)+1);%ÀíĞÔ
+dd=sign(sign(d)+1);%ç†æ€§
 pp=dd./(1+exp((-1)*d/k));
 pppp=rand(N,N);
 AAAA=(p==1).*AA(1:N,2:(N+1))+(p==2).*AA(3:(N+2),2:(N+1))+(p==3).*AA(2:(N+1),1:N)+(p==4).*AA(2:(N+1),3:(N+2));
